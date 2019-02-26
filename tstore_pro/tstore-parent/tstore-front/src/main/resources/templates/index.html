@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>电子商城首页</title>
+<style type="text/css">
+#tbBox {
+	width: 1020px;
+}
+
+.tbd {
+	text-align: center;
+}
+
+.thd {
+	font-size: 18px;
+	font-weight: 100;
+}
+</style>
+</head>
+<body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<h1>数据接口测试</h1>
+	<input type="button" id="btn" value="初始化数据" />
+	<div id="databox" style="background: #eaeaea">
+		<table id="tbBox">
+			<thead class="thd">
+				<tr>
+					<th>2019-02-27 接口数据信息</th>
+
+				</tr>
+			</thead>
+			<tbody class="tbd" id="tbd">
+
+			</tbody>
+		</table>
+	</div>
+
+	<script type="text/javascript">
+		$(function() {
+			/*初始化数据  1|手机|http://www.baidu.com*/
+			$("#btn").on("click", function() {
+				var divDom = $("#databox");
+				divDom.html("");
+				$.ajax({
+					type : "get",
+					url : "http://localhost:8081/item/findItemgorys",
+					success : function(data) {
+						var html = "";
+						$(data).each(function() {
+							var $data = $(this).get(0).datas;
+							var  cArry = $data.split(",")
+ 						    console.log(cArry);
+//  							for(var i = 0; i<cArry.length; i++){
+//  								var typeArray = "|";
+//  								var  cArry = $data.split("|");
+//  								typeArray+=cArry
+//  							}
+							html += "<tr><td>" + $data + "</td></tr>"
+						});
+						divDom.append(html);
+					},
+					error : function() {
+						alert("服务器出错");
+					}
+
+				});
+			});
+
+		});
+	</script>
+
+</body>
+</html>
