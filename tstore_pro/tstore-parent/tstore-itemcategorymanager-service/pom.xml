@@ -34,7 +34,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- mybatis整合 -->
+		<!-- mybatis整合111 -->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
