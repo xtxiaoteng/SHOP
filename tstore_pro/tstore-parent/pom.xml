@@ -101,7 +101,7 @@
 			<version>2.6.0</version>
 		</dependency>
 
-		<!-- httpclient 服务于支付，发送短信 -->
+		<!-- httpclient 服务于支付，发送短信 11-->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
