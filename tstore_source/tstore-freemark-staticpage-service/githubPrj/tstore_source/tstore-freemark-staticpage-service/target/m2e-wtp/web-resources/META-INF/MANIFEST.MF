@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: tstore-freemark-staticpage-service
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: 逗逗
+Implementation-Vendor-Id: com.tstore
+Build-Jdk: 1.8.0_112
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/tstore-freemark-staticpage-service
+Created-By: Maven Integration for Eclipse
+

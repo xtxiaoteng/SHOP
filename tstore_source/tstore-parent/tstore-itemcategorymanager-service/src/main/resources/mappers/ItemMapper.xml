@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tstore.mapper.ItemMapper" >
+  
+ 	 <resultMap id="BaseResultMap" type="com.tstore.pojo.Item" >
+	      <id property="id" column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+	      <result property="title" column="title" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="sellPoint" column="sell_point" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="price" column="price" jdbcType="DECIMAL" javaType="java.lang.Float" />
+	      <result property="stockCount" column="stock_count" jdbcType="INTEGER" javaType="java.lang.Integer" />
+	      <result property="num" column="num" jdbcType="INTEGER" javaType="java.lang.Integer" />
+	      <result property="barcode" column="barcode" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="image" column="image" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="categoryid" column="categoryId" jdbcType="BIGINT" javaType="java.lang.Long" />
+	      <result property="status" column="status" jdbcType="TINYINT" javaType="java.lang.Integer" />
+	      <result property="createTime" column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+	      <result property="updateTime" column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+	      <result property="itemSn" column="item_sn" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="costPirce" column="cost_pirce" jdbcType="DECIMAL" javaType="java.lang.Float" />
+	      <result property="marketPrice" column="market_price" jdbcType="DECIMAL" javaType="java.lang.Float" />
+	      <result property="isDefault" column="is_default" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="goodsId" column="goods_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+	      <result property="sellerId" column="seller_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="cartThumbnail" column="cart_thumbnail" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="category" column="category" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="brand" column="brand" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="spec" column="spec" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="seller" column="seller" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="url" column="url" jdbcType="VARCHAR" javaType="java.lang.String" />
+  	</resultMap>
+  
+  	<sql id="Base_Column_List">
+  		id,title,sell_point,price,url
+  		,stock_count,num,barcode,image,categoryId,status,create_time,update_time,item_sn,cost_pirce,market_price,is_default,goods_id,seller_id,cart_thumbnail,category,brand,spec,seller
+
+  	</sql>
+  	
+  	<select id="queryItemAll" resultMap="BaseResultMap" parameterType="com.tstore.vo.Params">
+  		SELECT
+			<include refid="Base_Column_List"></include>
+		FROM
+			tb_item
+		<where>
+	 	 <if test="keyword!=null and keyword!=''"> 
+		 	<bind name="searchkey" value="'%'+keyword+'%'"/>
+			and title like #{searchkey}	
+		 </if>
+		 <if test="status!=null"> and status =#{status}</if>
+		 <if test="filterId!=null"> and id != #{filterId}</if>
+		</where>
+<!-- 		order by create_time desc	 -->
+  	</select>
+  
+  	<select id="getItemById" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  		SELECT
+			<include refid="Base_Column_List"></include>
+		FROM
+			tb_item
+		WHERE
+			id = #{id,jdbcType=INTEGER}
+  	</select>
+  	
+  	<insert id="saveItem" flushCache="true" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+  		insert into tb_item (title,sell_point,price,stock_count,num,barcode,image,categoryId,status,create_time,update_time,item_sn,cost_pirce,market_price,is_default,goods_id,seller_id,cart_thumbnail,category,brand,spec,seller,url)values(#{title,jdbcType=VARCHAR},#{sellPoint,jdbcType=VARCHAR},#{price,jdbcType=DECIMAL},#{stockCount,jdbcType=INTEGER},#{num,jdbcType=INTEGER},#{barcode,jdbcType=VARCHAR},#{image,jdbcType=VARCHAR},#{categoryid,jdbcType=BIGINT},#{status,jdbcType=VARCHAR},now(),now(),#{itemSn,jdbcType=VARCHAR},#{costPirce,jdbcType=DECIMAL},#{marketPrice,jdbcType=DECIMAL},#{isDefault,jdbcType=VARCHAR},#{goodsId,jdbcType=BIGINT},#{sellerId,jdbcType=VARCHAR},#{cartThumbnail,jdbcType=VARCHAR},#{category,jdbcType=VARCHAR},#{brand,jdbcType=VARCHAR},#{spec,jdbcType=VARCHAR},#{seller,jdbcType=VARCHAR},#{url})
+  	</insert>
+  	
+  	<update id="updateItem" parameterType="com.tstore.pojo.Item" flushCache="true">
+  		update tb_item 
+  		<set>
+			<if test="id!=null">id = #{id,jdbcType=BIGINT},</if>
+			<if test="title!=null and title!=''">title = #{title,jdbcType=VARCHAR},</if>
+			<if test="sellPoint!=null and sellPoint!=''">sell_point = #{sellPoint,jdbcType=VARCHAR},</if>
+			<if test="price!=null">price = #{price,jdbcType=DECIMAL},</if>
+			<if test="stockCount!=null">stock_count = #{stockCount,jdbcType=INTEGER},</if>
+			<if test="num!=null">num = #{num,jdbcType=INTEGER},</if>
+			<if test="barcode!=null and barcode!=''">barcode = #{barcode,jdbcType=VARCHAR},</if>
+			<if test="image!=null and image!=''">image = #{image,jdbcType=VARCHAR},</if>
+			<if test="categoryid!=null">categoryId = #{categoryid,jdbcType=BIGINT},</if>
+			<if test="status!=null and status!=''">status = #{status,jdbcType=VARCHAR},</if>
+			<if test="createTime!=null">create_time = now(),</if>
+			<if test="updateTime!=null">update_time = now(),</if>
+			<if test="itemSn!=null and itemSn!=''">item_sn = #{itemSn,jdbcType=VARCHAR},</if>
+			<if test="costPirce!=null">cost_pirce = #{costPirce,jdbcType=DECIMAL},</if>
+			<if test="marketPrice!=null">market_price = #{marketPrice,jdbcType=DECIMAL},</if>
+			<if test="isDefault!=null and isDefault!=''">is_default = #{isDefault,jdbcType=VARCHAR},</if>
+			<if test="goodsId!=null">goods_id = #{goodsId,jdbcType=BIGINT},</if>
+			<if test="sellerId!=null and sellerId!=''">seller_id = #{sellerId,jdbcType=VARCHAR},</if>
+			<if test="cartThumbnail!=null and cartThumbnail!=''">cart_thumbnail = #{cartThumbnail,jdbcType=VARCHAR},</if>
+			<if test="category!=null and category!=''">category = #{category,jdbcType=VARCHAR},</if>
+			<if test="brand!=null and brand!=''">brand = #{brand,jdbcType=VARCHAR},</if>
+			<if test="spec!=null and spec!=''">spec = #{spec,jdbcType=VARCHAR},</if>
+			<if test="seller!=null and seller!=''">seller = #{seller,jdbcType=VARCHAR},</if>
+			<if test="url!=null and url!=''">url = #{url,jdbcType=VARCHAR},</if>
+  		</set>
+  		where id = #{id ,jdbcType=INTEGER}
+  	</update>
+  	
+  	 <update id="updateItemUrl">
+  		update tb_item set url = #{url,jdbcType=VARCHAR},update_time=now() where id = #{id,jdbcType=BIGINT}
+  	</update>
+  	
+  	<delete id="deleteItemById" flushCache="true">
+  		delete from tb_item where id = #{id,jdbcType=INTEGER}
+  	</delete>
+  	
+ </mapper>	

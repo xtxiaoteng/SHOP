@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tstore.mapper.content.ContentMapper" >
+  
+ 	 <resultMap id="BaseResultMap" type="com.tstore.pojo.Content" >
+	      <id property="id" column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+	      <result property="categoryId" column="category_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+	      <result property="title" column="title" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="subTitle" column="sub_title" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="titleDesc" column="title_desc" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="url" column="url" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="pic" column="pic" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="pic2" column="pic2" jdbcType="VARCHAR" javaType="java.lang.String" />
+	      <result property="content" column="content" jdbcType="LONGVARCHAR" javaType="java.lang.String" />
+	      <result property="created" column="created" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+	      <result property="updated" column="updated" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+	      <result property="sortorder" column="sort_order" jdbcType="INTEGER" javaType="java.lang.Integer" />
+	      <result property="status" column="status" jdbcType="INTEGER" javaType="java.lang.Integer" />   
+  	</resultMap>
+  
+  	<sql id="Base_Column_List">
+  		id,category_id,title,url,pic,status,sort_order
+  	</sql>
+  	
+  	<sql id="Base_Column_List_Main">
+  		id,category_id,title,url,pic
+  	</sql>
+  	<select id="findContentsByCategoryid" resultMap="BaseResultMap" parameterType="java.lang.Long">
+  		SELECT
+			<include refid="Base_Column_List_Main"></include>
+		FROM
+			tb_content where status=1 and category_Id=#{categoryId} order by sort_order asc	
+  	</select>
+  
+
+  	
+  	
+  
+ </mapper>	
