@@ -15,7 +15,7 @@ import com.tstore.service.StaticService;
 public class StaticController {
 	@Autowired
 	private StaticService staticService;
-
+	/*通过商品id进行静态化11*/
 	@GetMapping("/item/{id}")
 	public String staticItem(@PathVariable("id") Long id, HttpServletRequest request) {
 		staticService.staticItem(id, request);

@@ -27,7 +27,7 @@ import freemarker.template.Template;
 @Service
 public class StaticService {
 
-	@Reference
+	@Reference(check = false)
 	private IItemService iItemService;
 	
 	
