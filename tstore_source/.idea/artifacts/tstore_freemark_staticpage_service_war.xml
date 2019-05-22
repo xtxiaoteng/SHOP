@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tstore-freemark-staticpage-service:war">
+    <output-path>$PROJECT_DIR$/tstore-freemark-staticpage-service/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>tstore-freemark-staticpage-service</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="tstore-freemark-staticpage-service-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="tstore-freemark-staticpage-service:war exploded" />
+    </root>
+  </artifact>
+</component>

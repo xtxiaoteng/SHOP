@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ElasticsearchDemo/ElasticsearchDemo.iml" filepath="$PROJECT_DIR$/ElasticsearchDemo/ElasticsearchDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/incubator-dubbo-ops-master/dubbo-admin/dubbo-admin.iml" filepath="$PROJECT_DIR$/incubator-dubbo-ops-master/dubbo-admin/dubbo-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/incubator-dubbo-ops-master/dubbo-monitor-simple/dubbo-monitor-simple.iml" filepath="$PROJECT_DIR$/incubator-dubbo-ops-master/dubbo-monitor-simple/dubbo-monitor-simple.iml" />
+      <module fileurl="file://$PROJECT_DIR$/incubator-dubbo-ops-master/dubbo-ops.iml" filepath="$PROJECT_DIR$/incubator-dubbo-ops-master/dubbo-ops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/incubator-dubbo-ops-master/dubbo-registry-simple/dubbo-registry-simple.iml" filepath="$PROJECT_DIR$/incubator-dubbo-ops-master/dubbo-registry-simple/dubbo-registry-simple.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tstore-parent/tstore-common/tstore-common.iml" filepath="$PROJECT_DIR$/tstore-parent/tstore-common/tstore-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tstore-parent/tstore-common-interface/tstore-common-interface.iml" filepath="$PROJECT_DIR$/tstore-parent/tstore-common-interface/tstore-common-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tstore-parent/tstore-content-service-manager/tstore-content-service-manager.iml" filepath="$PROJECT_DIR$/tstore-parent/tstore-content-service-manager/tstore-content-service-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tstore-freemark-staticpage-service/tstore-freemark-staticpage-service.iml" filepath="$PROJECT_DIR$/tstore-freemark-staticpage-service/tstore-freemark-staticpage-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tstore-parent/tstore-front/tstore-front.iml" filepath="$PROJECT_DIR$/tstore-parent/tstore-front/tstore-front.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tstore-parent/tstore-itemcategorymanager-service/tstore-itemcategorymanager-service.iml" filepath="$PROJECT_DIR$/tstore-parent/tstore-itemcategorymanager-service/tstore-itemcategorymanager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tstore-message-sendservice/tstore-message-sendservice.iml" filepath="$PROJECT_DIR$/tstore-message-sendservice/tstore-message-sendservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tstore-parent/tstore-parent.iml" filepath="$PROJECT_DIR$/tstore-parent/tstore-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tstore-parent/tstore-search-engin-front/tstore-search-engin-front.iml" filepath="$PROJECT_DIR$/tstore-parent/tstore-search-engin-front/tstore-search-engin-front.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tstore-parent/tstore-usermanager-service/tstore-usermanager-service.iml" filepath="$PROJECT_DIR$/tstore-parent/tstore-usermanager-service/tstore-usermanager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tstore_source.iml" filepath="$PROJECT_DIR$/.idea/tstore_source.iml" />
+    </modules>
+  </component>
+</project>

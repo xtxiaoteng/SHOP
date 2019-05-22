@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/incubator-dubbo-ops-master/dubbo-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tstore-freemark-staticpage-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tstore-message-sendservice" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tstore-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tstore-parent/tstore-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tstore-parent/tstore-common-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tstore-parent/tstore-content-service-manager" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tstore-parent/tstore-front" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tstore-parent/tstore-itemcategorymanager-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tstore-parent/tstore-search-engin-front" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tstore-parent/tstore-usermanager-service" charset="UTF-8" />
+  </component>
+</project>

@@ -10,8 +10,8 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
  * 
  *  freemaker 在调用模板渲染的时候，都会经过这个类FreeMarkerView
  * FreemarkerView<br/>
- * 创建人:xuchengfeifei<br/>
- * 手机/微信:15074816437<br/> 
+ * 创建人:xiaoteng<br/>
+ * 手机/微信:18820148139<br/>
  * 时间：2019年3月11日-下午10:55:01 <br/>
  * @version 1.0.0<br/>
  *

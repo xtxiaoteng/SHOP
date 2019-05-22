@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.core.SearchResultMapper;
 import org.springframework.data.elasticsearch.core.aggregation.AggregatedPage;
@@ -68,8 +69,9 @@ public class SItemServiceImpl implements SItemService {
   /*高亮分页的 有问题 有待解决*/
     @Override
     public AggregatedPage<SItem>  pageQuery(Integer pageNo, Integer pageSize, String keyword) {
-    	
-    	PageRequest pageable = PageRequest.of(pageNo, pageSize);
+
+        Sort sort = Sort.by(Sort.Order.desc("price"));
+    	PageRequest pageable = PageRequest.of(pageNo, pageSize,sort);
 
         String preTag = "<i class='skeyon'>";//google的色值
         String postTag = "</i>";
@@ -87,6 +89,8 @@ public class SItemServiceImpl implements SItemService {
 	
             @Override
             public <T> AggregatedPage<T> mapResults(SearchResponse response, Class<T> clazz, Pageable pageable) {
+                long total = response.getHits().totalHits;
+                float score = response.getHits().getMaxScore();
                 List<SItem> sItems = new ArrayList<>();
                 for (SearchHit searchHit : response.getHits()) {
                     if (response.getHits().getHits().length <= 0) {
@@ -114,7 +118,7 @@ public class SItemServiceImpl implements SItemService {
                     sItems.add(sitem);
                 }
                 
-               return new AggregatedPageImpl((List<T>) sItems);
+               return new AggregatedPageImpl((List<T>) sItems,pageable,total,score);
             }
         });
         

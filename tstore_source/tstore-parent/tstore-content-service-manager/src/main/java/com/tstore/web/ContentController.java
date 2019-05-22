@@ -21,4 +21,9 @@ public class ContentController {
 		return contentService.findContentsByCategoryid(categroyId, 0,3);
 	}
 
+	@GetMapping("/test")
+	public String test(){
+		return  "test";
+	}
+
 }

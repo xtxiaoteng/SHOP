@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dubbo-admin" />
+        <module name="dubbo-monitor-simple" />
+        <module name="dubbo-registry-simple" />
+        <module name="ElasticsearchDemo" />
+        <module name="tstore-common" />
+        <module name="tstore-common-interface" />
+        <module name="tstore-content-service-manager" />
+        <module name="tstore-freemark-staticpage-service" />
+        <module name="tstore-front" />
+        <module name="tstore-itemcategorymanager-service" />
+        <module name="tstore-message-sendservice" />
+        <module name="tstore-search-engin-front" />
+        <module name="tstore-usermanager-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dubbo-admin" target="1.8" />
+      <module name="dubbo-monitor-simple" target="1.6" />
+      <module name="dubbo-ops" target="1.5" />
+      <module name="dubbo-registry-simple" target="1.6" />
+      <module name="ElasticsearchDemo" target="1.5" />
+      <module name="tstore-common" target="1.8" />
+      <module name="tstore-common-interface" target="1.8" />
+      <module name="tstore-content-service-manager" target="1.8" />
+      <module name="tstore-freemark-staticpage-service" target="1.8" />
+      <module name="tstore-front" target="1.8" />
+      <module name="tstore-itemcategorymanager-service" target="1.8" />
+      <module name="tstore-message-sendservice" target="1.8" />
+      <module name="tstore-parent" target="1.8" />
+      <module name="tstore-search-engin-front" target="1.8" />
+      <module name="tstore-usermanager-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="dubbo-admin" options="-parameters" />
+      <module name="tstore-freemark-staticpage-service" options="-parameters" />
+      <module name="tstore-message-sendservice" options="-parameters" />
+    </option>
+  </component>
+</project>
